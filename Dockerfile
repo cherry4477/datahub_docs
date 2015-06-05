@@ -11,9 +11,8 @@ RUN cd /usr/share/nginx/html && \
 RUN cd /usr/share/nginx/html/grav && \
   /usr/bin/php bin/grav install
 RUN cd /usr/share/nginx/html/grav && \
-  grep -lr 'googleapis' | xargs sed -i '/googleapis\.com/d' && \
   chown -R www-data:www-data cache/ logs/ images/ assets/ user/data/ backup/ && \
-  rm /etc/nginx/sites-enabled/*
+  rm -f /etc/nginx/sites-enabled/*
 
 COPY nginx/sites-available/ /etc/nginx/sites-available/
 RUN ln -s /etc/nginx/sites-available/grav.conf /etc/nginx/sites-enabled/
