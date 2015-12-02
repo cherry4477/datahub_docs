@@ -10,6 +10,8 @@ RUN cd /usr/share/nginx/html && \
   git clone https://github.com/getgrav/grav.git
 RUN cd /usr/share/nginx/html/grav && \
   /usr/bin/php bin/grav install
+RUN cd /usr/share/nginx/html/user && \
+  git clone https://github.com/asiainfoLDP/datahub_docs.git
 RUN cd /usr/share/nginx/html/grav && \
   chown -R www-data:www-data cache/ logs/ images/ assets/ user/data/ backup/ && \
   rm -f /etc/nginx/sites-enabled/*
