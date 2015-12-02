@@ -1,7 +1,6 @@
 FROM ubuntu
 MAINTAINER sinkcup <sinkcup@163.com>
 
-RUN ping -c 2 archive.ubuntu.com
 RUN apt-get update
 RUN apt-get upgrade -y
 RUN apt-get install -y supervisor git wget curl nginx php5-fpm php5-gd php5-cli php5-curl
