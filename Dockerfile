@@ -1,6 +1,9 @@
 FROM ubuntu
 MAINTAINER sinkcup <sinkcup@163.com>
 
+ENV TIME_ZONE=Asia/Shanghai
+RUN ln -snf /usr/share/zoneinfo/$TIME_ZONE /etc/localtime && echo $TIME_ZONE > /etc/timezone
+
 RUN apt-get update
 RUN apt-get upgrade -y
 RUN apt-get install -y supervisor git wget curl nginx php5-fpm php5-gd php5-cli php5-curl
