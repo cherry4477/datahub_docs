@@ -1,4 +1,4 @@
-FROM ubuntu:14.04
+FROM registry.dataos.io/datafoundry/ubuntu:14.04
 MAINTAINER sinkcup <sinkcup@163.com>
 
 ENV TIME_ZONE=Asia/Shanghai
